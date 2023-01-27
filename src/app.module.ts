@@ -6,12 +6,12 @@ import { EventoModule } from './evento/evento.module';
 
 @Module({
   imports: [EventoModule,TypeOrmModule.forRoot({
-    port:Number(process.env.MYSQLPORT),
+    port:3306,
     type:'mysql',
     database:'agenda',
-    host: process.env.MYSQLHOST,
-    password: process.env.MYSQLPASSWORD,
-    username:process.env.MYSQLUSER,
+    host:'localhost',
+    password:'root',
+    username:'root',
     autoLoadEntities:true,
     synchronize:true
   })],
