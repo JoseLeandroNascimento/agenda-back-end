@@ -8,10 +8,10 @@ import { EventoModule } from './evento/evento.module';
   imports: [EventoModule,TypeOrmModule.forRoot({
     port:3306,
     type:'mysql',
+    host:'agenda_db_container',
     database:'agenda',
-    host:'localhost',
-    password:'root',
     username:'root',
+    password:'',
     autoLoadEntities:true,
     synchronize:true
   })],

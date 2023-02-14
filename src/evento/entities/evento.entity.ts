@@ -10,10 +10,10 @@ export class Evento {
     @Column()
     title:string;
 
-    @Column('datetime')
+    @Column({type:"datetime"})
     dateInicio:Date;
 
-    @Column('datetime')
+    @Column({type:"datetime"})
     dateTermino:Date;
 
     @Column('text')
