@@ -3,7 +3,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule,{cors:true});
 
   app.useGlobalPipes(new ValidationPipe({
     whitelist:true,
@@ -12,9 +12,7 @@ async function bootstrap() {
   }))
 
   process.env.TZ = "America/Rio_branco";
-  
-  app.enableCors();
-  
+    
   await app.listen(process.env.PORT || 3030);
 }
 bootstrap();
